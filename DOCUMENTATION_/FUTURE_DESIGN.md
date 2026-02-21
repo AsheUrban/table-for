@@ -1,15 +1,52 @@
-# Dine-Together Future Design
+# Table For — Future Design
 
-Design targets for the TS/Supabase/React Native migration. Wireframes exist but details are being refined.
+Design targets for the TypeScript/Supabase/React Native build. Wireframes exist for some features; others are being refined.
 
-**Last Updated:** 2026-02-10
+**Last Updated:** 2026-02-21
 
 ---
 
 ## Table of Contents
 
+- [Social Relationships](#social-relationships)
 - [Explore](#explore)
 - [PlaceProfile](#placeprofile)
+- [Posts & User Photos](#posts--user-photos)
+
+---
+
+## Social Relationships
+
+Table For has three layers of social connection. Each serves a different purpose and unlocks different features.
+
+### Follow (Asymmetric)
+- One-directional — you can follow someone without them following you back (LinkedIn-style)
+- Following someone surfaces their activity in your Explore sidebar and feed
+- No approval required — public action
+
+### Connection / Friend (Mutual)
+- Two-directional — requires a request and acceptance (like a friend request)
+- Mutual connections unlock deeper features: "Saved by X friends" on places, FRIENDS' PICKS filter
+- Either party can remove the connection
+
+### Groups
+- Created from mutual connections only — you can only add people you're connected with
+- Group members can accept or decline invitations
+- **Shared saved places** — group members contribute to a shared collection of restaurants
+- **Calendar integration** — members share availability windows
+- **Reservation booking** — match availability across group members, book for the group
+- Groups are the core "plan a dinner together" feature
+
+### Relationship Summary
+
+| Feature | Follow | Connection | Group |
+|---------|--------|------------|-------|
+| Requires approval | No | Yes | Yes (invite) |
+| Direction | One-way | Mutual | Mutual |
+| See activity in feed | Yes | Yes | Yes |
+| "Saved by friends" | No | Yes | Yes |
+| Shared saved places | No | No | Yes |
+| Calendar / reservations | No | No | Yes |
 
 ---
 
@@ -44,27 +81,34 @@ Appears as an overlay when a pin is tapped on the map.
 - **Save button** → quick save (addToSavedPlaces, no navigation)
 - **Go button** → open directions in Google Maps
 
+### Social Sidebar
+
+A secondary panel on the Explore screen showing recent social activity related to places:
+- Which places have recently been saved or posted about by people you follow or are connected with
+- Tapping an item navigates to the PlaceProfile
+- Provides social discovery — "what are people in my network eating?"
+
 ### Map Component
 
 Shared reusable `<Map>` component used by both Explore and PlaceProfile.
 - **Explore:** Multiple pins, pan/zoom to browse nearby
 - **PlaceProfile:** Single pin, centered on restaurant location
-- **Dependency:** Google Maps JavaScript SDK (`@react-google-maps/api`)
-- API key already restricted to include Maps JavaScript API (verified 2026-02-10)
+- **Dependency:** React Native maps library (e.g. `react-native-maps` or Expo MapView) — platform choice TBD
 
 ### Filter Chips (Ideas)
 
 **TOP RATED** — Client-side sort of nearby results by rating. Trivial to implement.
 
-**FRIENDS' PICKS** — Highlights places saved by people you follow on the map. Depends on the follow system being built first.
+**FRIENDS' PICKS** — Highlights places saved by your connections on the map. Requires the connection system.
 
 **NEARBY** — Core functionality. Nearby Search API provides pins as user browses the map. Different endpoint from the autocomplete search.
 
 ### Dependencies
 
 - Nearby Search API (different endpoint from autocomplete)
-- Google Maps JavaScript SDK
-- Follow system (for FRIENDS' PICKS filter only)
+- React Native maps library
+- Connection system (for FRIENDS' PICKS filter)
+- Follow / connection system (for social sidebar)
 
 ---
 
@@ -141,3 +185,20 @@ ActionBar (fixed bottom-left):
 
 **New Query Required:**
 - `subscribeToPostsByPlace(placeId)` — For "What Friends Say" section
+
+---
+
+## Posts & User Photos
+
+Posts are always connected to a place — every post references a restaurant.
+
+### User-Uploaded Photos
+- Users can attach their own photos to posts (food photos, restaurant ambiance, etc.)
+- When a user photo exists on a post, it takes priority over the Google Places API photo in display
+- Google Places photos serve as fallback when no user photo is provided
+- Photo storage via Supabase Storage
+
+### Post Display Priority
+1. User-uploaded photo (if present)
+2. Google Places API photo (fallback)
+3. No photo / placeholder

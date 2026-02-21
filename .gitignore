@@ -48,6 +48,9 @@ HISTORICAL_/
 # Migration planning (local development reference)
 MIGRATION_/
 
+# Log of daily work (local development reference)
+LOG_/
+
 # Claude Code
 tmpclaude-*
 CLAUDE.md

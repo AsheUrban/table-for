@@ -13,9 +13,9 @@ These guide what I build and why.
 
 ## Building It Right
 
-The MVP of Dine-Together was built as a proof of concept. It works with some core functionality, and more importantly, it taught me a lot about what this app needs to be.
+The Firebase MVP of this project was built as a proof of concept. It taught me a lot about what this app needs to be.
 
-The next version (TypeScript/Supabase/React Native migration) is where these values get built into the foundation — not bolted on after the fact. That means:
+Table For (TypeScript/Supabase/React Native) is where these values get built into the foundation — not bolted on after the fact. That means:
 - **Privacy controls from day one.** Users will be able to decide who sees their profile and activity. The database is designed around row-level security, so privacy isn't an afterthought — it's how the data works.
 - **Accessibility as a baseline.** Screen reader support, keyboard navigation, readable typography, and thoughtful design for users of all abilities and comfort levels with technology.
 - **Transparency built in.** Clear communication about what data is collected, why, and how it's used. No hidden tracking or mystery algorithms.
