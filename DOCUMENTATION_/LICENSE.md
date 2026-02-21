@@ -1,6 +1,6 @@
 # License
 
-**Dine Together — Source-Available License**
+**Table For Source-Available License**
 
 Copyright © 2026 Ashe Urban. All rights reserved.
 
