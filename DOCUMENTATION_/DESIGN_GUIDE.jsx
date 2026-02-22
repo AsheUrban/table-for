@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Dine Together - Design Guide
+// Table For - Design Guide
 // Menu Style: Black & White, Typewriter Font, Minimal Borders
 
 const DesignGuide = () => {
@@ -79,7 +79,7 @@ const DesignGuide = () => {
             fontWeight: 700,
             margin: '0 0 8px',
             letterSpacing: '0.15em',
-          }}>DINE TOGETHER</h1>
+          }}>TABLE FOR</h1>
           <p style={{
             fontSize: '12px',
             margin: 0,
@@ -514,7 +514,7 @@ const DesignGuide = () => {
               fontWeight: 700,
               textAlign: 'center',
               letterSpacing: '0.1em',
-            }}>DINE TOGETHER</div>
+            }}>TABLE FOR</div>
           </div>
 
           <div style={{ fontSize: '12px', opacity: 0.6, lineHeight: 1.8 }}>
