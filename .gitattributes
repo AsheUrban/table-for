@@ -1,1 +1,5 @@
 package-lock.json linguist-generated=true
+babel.config.js linguist-generated=true
+metro.config.js linguist-generated=true
+tailwind.config.js linguist-generated=true
+eslint.config.js linguist-generated=true
