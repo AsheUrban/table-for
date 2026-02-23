@@ -21,7 +21,9 @@
 
 ## **Project Overview**
 
-Table For is a social dining app that helps you discover restaurants and coordinate meals with the people you care about. Save and share places, follow friends, build connections, and organize group outings — from finding somewhere everyone likes to matching schedules and booking a table.
+A Table For cuts through the endless group chat back-and-forth of planning dinner out. Know which restaurants your group has in common, see reservation availability for your party size, and book it, all in one place.
+
+Instead of 30 messages negotiating where, when, and who's booking, someone says "let's eat Friday," the app shows which shared places have availability for the group, everyone picks, done.
 
 This project is a ground-up TypeScript rewrite of [Dine-Together](https://github.com/AsheUrban/Dine-Together), the JavaScript/Firebase MVP. It is being rebuilt with Expo/React Native and Supabase to support mobile-first development, a richer social graph, and deeper dining coordination features.
 

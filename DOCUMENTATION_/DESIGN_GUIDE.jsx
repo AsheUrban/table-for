@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Table For - Design Guide
+// A Table For - Design Guide
 // Menu Style: Black & White, Typewriter Font, Minimal Borders
 
 const DesignGuide = () => {

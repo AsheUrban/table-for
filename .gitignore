@@ -51,6 +51,12 @@ MIGRATION_/
 # Daily log (local development reference)
 LOG_/
 
+# Design Prototype
+ATableFor-Prototype.jsx
+
+# Research
+RESEARCH_
+
 # Claude Code
 tmpclaude-*
 CLAUDE.md
