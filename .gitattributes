@@ -1,5 +1,5 @@
-package-lock.json linguist-vendored=true
-babel.config.js linguist-vendored=true
-metro.config.js linguist-vendored=true
-tailwind.config.js linguist-vendored=true
-eslint.config.js linguist-vendored=true
+package-lock.json linguist-generated=true linguist-vendored=true
+babel.config.js linguist-generated=true linguist-vendored=true
+metro.config.js linguist-generated=true linguist-vendored=true
+tailwind.config.js linguist-generated=true linguist-vendored=true
+eslint.config.js linguist-generated=true linguist-vendored=true
