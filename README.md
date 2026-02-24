@@ -21,7 +21,7 @@
 
 ## **Project Overview**
 
-A Table For cuts through the endless group chat back-and-forth of planning dinner out. Know which restaurants your group has in common, see reservation availability for your party size, and book it, all in one place.
+A Table For cuts through the endless back-and-forth of planning dinner out. Know which restaurants your group has in common, see reservation availability for your party size, and book it, all in one place.
 
 Instead of 30 messages negotiating where, when, and who's booking, someone says "let's eat Friday," the app shows which shared places have availability for the group, everyone picks, done.
 
