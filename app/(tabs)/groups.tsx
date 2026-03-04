@@ -1,9 +1,9 @@
 import { View, Text } from 'react-native';
 
-export default function Profile() {
+export default function Groups() {
   return (
     <View>
-      <Text>Profile</Text>
+      <Text>Groups</Text>
     </View>
   );
 }
