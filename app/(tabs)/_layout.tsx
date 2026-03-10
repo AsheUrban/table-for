@@ -1,9 +1,15 @@
+import TabBar from '@/components/TabBar';
 import { Tabs } from 'expo-router';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import GroupIcon from '../../assets/images/group.svg';
+import ProfileIcon from '../../assets/images/profile.svg';
+import ExploreIcon from '../../assets/images/explore.svg';
+import FeedIcon from '../../assets/images/feed.svg';
 
 export default function TabLayout() {
   return (
     <Tabs
+      tabBar={(props) => <TabBar {...props} />}
+
       screenOptions={{
         headerShown: false,
       }}>
@@ -11,11 +17,11 @@ export default function TabLayout() {
         name='index'
         options={{
           title: 'Feed',
-          tabBarIcon: ({ focused, color, size }) => (
-            <Ionicons
-              name={focused ? 'home' : 'home-outline'}
-              size={size}
-              color={color}
+          tabBarIcon: ({ color, size }) => (
+            <FeedIcon
+              width={size + 4}
+              height={size + 4}
+              fill={color}
             />
           ),
         }}
@@ -24,11 +30,11 @@ export default function TabLayout() {
         name='groups'
         options={{
           title: 'Groups',
-          tabBarIcon: ({ focused, color, size }) => (
-            <Ionicons
-              name={focused ? 'people' : 'people-outline'}
-              size={size}
-              color={color}
+          tabBarIcon: ({ color, size }) => (
+            <GroupIcon
+              width={size + 4}
+              height={size + 4}
+              fill={color}
             />
           ),
         }}
@@ -37,11 +43,11 @@ export default function TabLayout() {
         name='explore'
         options={{
           title: 'Explore',
-          tabBarIcon: ({ focused, color, size }) => (
-            <Ionicons
-              name={focused ? 'search' : 'search-outline'}
-              size={size}
-              color={color}
+          tabBarIcon: ({ color, size }) => (
+            <ExploreIcon
+              width={size + 12}
+              height={size + 8}
+              fill={color}
             />
           ),
         }}
@@ -50,11 +56,11 @@ export default function TabLayout() {
         name='profile'
         options={{
           title: 'Profile',
-          tabBarIcon: ({ focused, color, size }) => (
-            <Ionicons
-              name={focused ? 'person' : 'person-outline'}
-              size={size}
-              color={color}
+          tabBarIcon: ({ color, size }) => (
+            <ProfileIcon
+              width={size}
+              height={size}
+              fill={color}
             />
           ),
         }}

@@ -7,7 +7,12 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: ['CourierPrime_400Regular'],
+        display: ['Rosaline'],
+      },
+    },
   },
   plugins: [],
 };
