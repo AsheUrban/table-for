@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Stack } from 'expo-router';
+import { Stack, Redirect } from 'expo-router';
+import { AuthProvider, useAuth } from '../lib/auth-context';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
@@ -13,9 +14,22 @@ import 'react-native-reanimated';
 
 SplashScreen.preventAutoHideAsync();
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+function AuthGate() {
+  const { session, loading } = useAuth();
+
+  if (loading) return null;
+
+  return (
+    <>
+      <Stack>
+        <Stack.Screen name='(auth)' options={{ headerShown: false }} />
+        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+      </Stack>
+      {session ? <Redirect href='/(tabs)' /> : <Redirect href='/(auth)/sign-in' />}
+      <StatusBar style='auto' />
+    </>
+  );
+}
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -36,12 +50,8 @@ export default function RootLayout() {
   }
 
   return (
-    <>
-      <Stack>
-        <Stack.Screen name='(auth)' options={{ headerShown: false }} />
-        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-      </Stack>
-      <StatusBar style='auto' />
-    </>
+    <AuthProvider>
+      <AuthGate />
+    </AuthProvider>
   );
 }
