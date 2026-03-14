@@ -13,7 +13,6 @@
 - [Goals & Problems Solved](#goals--problems-solved)
 - [Setup / Installation](#setup--installation)
 - [Project Structure](#project-structure)
-- [Development Roadmap](#development-roadmap)
 - [Privacy Policy](#privacy-policy)
 - [License](#license)
 
@@ -29,7 +28,7 @@ This project is a ground-up TypeScript rewrite of [Dine-Together](https://github
 
 ---
 
-**Current Status:** Early development. Stack configured, auth flow planned.
+**Current Status:** Early development. Auth infrastructure built, UI component library in progress.
 
 ---
 
@@ -45,7 +44,6 @@ This project is a ground-up TypeScript rewrite of [Dine-Together](https://github
 
 | Document | Description |
 |----------|-------------|
-| [FUTURE_DESIGN.md](./DOCUMENTATION_/FUTURE_DESIGN.md) | Feature roadmap and design targets |
 | [VALUES.md](./DOCUMENTATION_/VALUES.md) | Project values and guiding principles |
 | [PRIVACY_POLICY.md](./DOCUMENTATION_/PRIVACY_POLICY.md) | Privacy policy — pending rewrite for Supabase stack |
 | [LICENSE.md](./DOCUMENTATION_/LICENSE.md) | Source-available license — viewable for learning and review, not licensed for use or redistribution |
@@ -67,7 +65,7 @@ This project is a ground-up TypeScript rewrite of [Dine-Together](https://github
 Table For uses **Expo Router** for file-based navigation, organized into route groups that map directly to app state:
 
 - **`(auth)/`** — Unauthenticated screens: sign in, sign up, email verification, password reset
-- **`(tabs)/`** — Authenticated app: Feed, Explore, Profile
+- **`(tabs)/`** — Authenticated app: Feed, Groups, Explore, Profile
 
 **Auth state guard** — The root `_layout.tsx` listens to Supabase's `onAuthStateChange` and redirects between `(auth)` and `(tabs)` automatically via Expo Router's `Redirect` component.
 
@@ -87,7 +85,7 @@ app/
     forgot-password.tsx  ← Enter email for reset link
     reset-password.tsx   ← Enter new password (deep link target)
   (tabs)/
-    _layout.tsx          ← Tab layout (Feed / Explore / Profile)
+    _layout.tsx          ← Tab layout (Feed / Groups / Explore / Profile)
 ```
 
 ---
@@ -117,10 +115,10 @@ table-for/
 │   ├── _layout.tsx            ← Root layout (auth state guard)
 │   ├── (auth)/                ← Unauthenticated screens
 │   └── (tabs)/                ← Authenticated app screens
-├── components/                ← Reusable UI components
+├── components/                ← Reusable UI components (design system)
+├── lib/                       ← Infrastructure (Supabase client, auth, storage, schemas)
 ├── hooks/                     ← Custom React hooks
-├── constants/                 ← Shared constants (colors, config)
-├── assets/                    ← Fonts, images
+├── assets/                    ← Fonts, images, SVG icons
 ├── DOCUMENTATION_/            ← Project documentation
 ├── global.css                 ← Tailwind directives for NativeWind
 ├── tailwind.config.js         ← Tailwind config with NativeWind preset
@@ -128,12 +126,6 @@ table-for/
 ├── metro.config.js            ← Metro bundler config (NativeWind wrapper)
 └── nativewind-env.d.ts        ← TypeScript types for NativeWind
 ```
-
----
-
-## **Development Roadmap**
-
-See [FUTURE_DESIGN.md](./DOCUMENTATION_/FUTURE_DESIGN.md) for planned features and design targets.
 
 ---
 
