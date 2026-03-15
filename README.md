@@ -126,7 +126,7 @@ table-for/
 ├── metro.config.js            ← Metro bundler config (NativeWind wrapper)
 └── nativewind-env.d.ts        ← TypeScript types for NativeWind
 ```
-
+npm 
 ---
 
 ## **Privacy Policy**
