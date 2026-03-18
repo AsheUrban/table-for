@@ -11,6 +11,7 @@ import {
 } from '@expo-google-fonts/courier-prime';
 import '../global.css';
 import 'react-native-reanimated';
+import { KeyboardProvider } from 'react-native-keyboard-controller';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -51,7 +52,9 @@ export default function RootLayout() {
 
   return (
     <AuthProvider>
-      <AuthGate />
+      <KeyboardProvider>
+        <AuthGate />
+      </KeyboardProvider>
     </AuthProvider>
   );
 }
