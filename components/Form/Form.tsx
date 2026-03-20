@@ -1,4 +1,4 @@
-import { ViewStyle } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 import { KeyboardAwareScrollView, KeyboardToolbar } from 'react-native-keyboard-controller';
 
 type FormProps = {
@@ -17,7 +17,9 @@ export default function Form({ children, contentContainerStyle }: FormProps) {
           ...contentContainerStyle,
         }}
       >
+      <View style={{  maxWidth: 320, width: '100%', alignSelf: 'center' }}>
         {children}
+      </View>
       </KeyboardAwareScrollView>
       <KeyboardToolbar />
     </>
