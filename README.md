@@ -28,7 +28,7 @@ This project is a ground-up TypeScript rewrite of [Dine-Together](https://github
 
 ---
 
-**Current Status:** Early development. Auth infrastructure built, UI component library in progress.
+**Current Status:** Active development.
 
 ---
 
@@ -115,7 +115,9 @@ table-for/
 │   ├── _layout.tsx            ← Root layout (auth state guard)
 │   ├── (auth)/                ← Unauthenticated screens
 │   └── (tabs)/                ← Authenticated app screens
-├── components/                ← Reusable UI components (design system)
+├── components/                ← UI component library
+│   ├── global/              ← Cross-context components (Text, Button, Card, etc.)
+│   └── form/                ← Form-specific components (Form, Input, etc.)
 ├── lib/                       ← Infrastructure (Supabase client, auth, storage, schemas)
 ├── hooks/                     ← Custom React hooks
 ├── assets/                    ← Fonts, images, SVG icons
@@ -126,7 +128,7 @@ table-for/
 ├── metro.config.js            ← Metro bundler config (NativeWind wrapper)
 └── nativewind-env.d.ts        ← TypeScript types for NativeWind
 ```
-npm 
+
 ---
 
 ## **Privacy Policy**

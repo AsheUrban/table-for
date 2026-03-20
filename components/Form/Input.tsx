@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { Pressable, TextInput, TextInputProps, View } from 'react-native';
-import MutedText from '../Global/MutedText';
+import MutedText from '../global/MutedText';
 
 type InputProps = TextInputProps & {
   label: string;

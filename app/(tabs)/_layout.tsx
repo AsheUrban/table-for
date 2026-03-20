@@ -1,4 +1,4 @@
-import TabBar from '@/components/Global/TabBar';
+import TabBar from '@/components/global/TabBar';
 import { Tabs } from 'expo-router';
 import ExploreIcon from '../../assets/images/explore.svg';
 import FeedIcon from '../../assets/images/feed.svg';

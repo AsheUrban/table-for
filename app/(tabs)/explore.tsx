@@ -1,5 +1,5 @@
 import { View } from 'react-native';
-import Text from '../../components/Global/Text';
+import Text from '../../components/global/Text';
 
 export default function Explore() {
   return (
