@@ -22,7 +22,7 @@ export default function Input({ label, error, note, secureToggle, ...rest }: Inp
         <TextInput
           {...rest}
           secureTextEntry={secureToggle ? !showPassword : rest.secureTextEntry}
-          className={`border border-black bg-neutral-50 px-2.5 py-2.5 font-mono text-[13px]${secureToggle ? ' pr-10' : ''}`}
+          className={`border border-black bg-neutral-50 px-2.5 py-2.5 font-mono text-[14px]${secureToggle ? ' pr-10' : ''}`}
         />
         {secureToggle && (
           <Pressable

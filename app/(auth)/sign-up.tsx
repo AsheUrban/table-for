@@ -56,7 +56,7 @@ export default function SignUp() {
   return (
     <FormCentered>
       <Card>
-        <H4 className='text-center mb-6'>Create Account</H4>
+        <H4 className='text-center mb-6'>CREATE ACCOUNT</H4>
 
         {serverError !== '' && (
           <MutedText className='mb-4'>{serverError}</MutedText>
@@ -117,7 +117,7 @@ export default function SignUp() {
         />
 
         <Button
-          title={isSubmitting ? 'Signing up...' : 'Sign-Up'}
+          title={isSubmitting ? 'signing up...' : 'SIGN-UP'}
           variant='black'
           onPress={handleSubmit(onSubmit)}
           disabled={isSubmitting}

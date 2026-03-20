@@ -10,6 +10,7 @@ export default function Form({ children, contentContainerStyle }: FormProps) {
   return (
     <>
       <KeyboardAwareScrollView
+      style={{ flex: 1 }}
         contentContainerStyle={{
           flexGrow: 1,
           padding: 24,
