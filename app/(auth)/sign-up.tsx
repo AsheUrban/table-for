@@ -67,7 +67,7 @@ export default function SignUp() {
           name='username'
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
-              label='USERNAME'
+              placeholder='username'
               autoFocus
               autoCapitalize='none'
               autoCorrect={false}
@@ -85,7 +85,7 @@ export default function SignUp() {
           name='email'
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
-              label='EMAIL'
+              placeholder='email'
               autoCapitalize='none'
               autoCorrect={false}
               keyboardType='email-address'
@@ -103,7 +103,7 @@ export default function SignUp() {
           name='password'
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
-              label='PASSWORD'
+              placeholder='password'
               autoCapitalize='none'
               secureToggle
               autoCorrect={false}

@@ -4,7 +4,7 @@ import { Pressable, TextInput, TextInputProps, View } from 'react-native';
 import MutedText from '../global/MutedText';
 
 type InputProps = TextInputProps & {
-  label: string;
+  label?: string;
   error?: string;
   note?: string;
   secureToggle?: boolean;
@@ -15,9 +15,9 @@ export default function Input({ label, error, note, secureToggle, ...rest }: Inp
 
   return (
     <View className='mb-4'>
-      <MutedText className='uppercase mb-1.5'>
-        {label}
-      </MutedText>
+      {label && (
+        <MutedText className='uppercase mb-1.5'>{label}</MutedText>
+      )}
       <View className='relative'>
         <TextInput
           {...rest}
