@@ -1,6 +1,6 @@
 import { View, ViewProps } from 'react-native';
 import Svg, { Line } from 'react-native-svg';
-import Text from './Text';
+import MutedText from './MutedText';
 
 type DividerProps = ViewProps & {
   text?: string;
@@ -37,9 +37,9 @@ export default function Divider({ text, ...rest }: DividerProps) {
       className={`flex-row items-center my-5 ${rest.className || ''}`}
     >
       {dotLine}
-      <Text className='text-[11px] opacity-60 mx-3'>
+      <MutedText className='mx-3'>
         {text}
-      </Text>
+      </MutedText>
       {dotLine}
     </View>
   );

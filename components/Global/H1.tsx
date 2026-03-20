@@ -1,6 +1,6 @@
 import { Text as RNText, TextProps } from 'react-native';
 
-export default function HeaderText(props: TextProps) {
+export default function H1(props: TextProps) {
   return (
     <RNText
       {...props}

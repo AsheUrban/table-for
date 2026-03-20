@@ -1,22 +1,23 @@
+import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
-import { Ionicons  } from '@expo/vector-icons';
-import { TextInput, TextInputProps, View, Pressable } from 'react-native';
-import Text from './Text';
+import { Pressable, TextInput, TextInputProps, View } from 'react-native';
+import MutedText from '../Global/MutedText';
 
 type InputProps = TextInputProps & {
   label: string;
   error?: string;
+  note?: string;
   secureToggle?: boolean;
 };
 
-export default function Input({ label, error, secureToggle, ...rest }: InputProps) {
+export default function Input({ label, error, note, secureToggle, ...rest }: InputProps) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <View className='mb-4'>
-      <Text className='text-[11px] uppercase opacity-60 mb-1.5'>
+      <MutedText className='uppercase mb-1.5'>
         {label}
-      </Text>
+      </MutedText>
       <View className='relative'>
         <TextInput
           {...rest}
@@ -36,10 +37,11 @@ export default function Input({ label, error, secureToggle, ...rest }: InputProp
           </Pressable>
         )}
       </View>
+      {note && (
+        <MutedText className='mt-1'>{note}</MutedText>
+      )}
       {error && (
-        <Text className='text-[11px] opacity-60 mt-1'>
-          {error}
-        </Text>
+        <MutedText className='mt-1'>{error}</MutedText>
       )}
     </View>
   ); 

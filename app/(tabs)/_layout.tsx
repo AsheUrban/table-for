@@ -1,9 +1,9 @@
-import TabBar from '@/components/TabBar';
+import TabBar from '@/components/Global/TabBar';
 import { Tabs } from 'expo-router';
-import GroupIcon from '../../assets/images/group.svg';
-import ProfileIcon from '../../assets/images/profile.svg';
 import ExploreIcon from '../../assets/images/explore.svg';
 import FeedIcon from '../../assets/images/feed.svg';
+import GroupIcon from '../../assets/images/group.svg';
+import ProfileIcon from '../../assets/images/profile.svg';
 
 export default function TabLayout() {
   return (

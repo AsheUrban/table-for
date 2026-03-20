@@ -6,4 +6,4 @@ export default function SignUp() {
       <Text className='text-lg'>Sign Up</Text>
     </View>
   );
-}
+} 

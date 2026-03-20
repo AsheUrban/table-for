@@ -7,11 +7,11 @@ export const signUpSchema = z.object({
     .max(20, 'Username must be 20 characters or less.')
     .regex(
       /^[a-zA-Z0-9_.]+$/,
-      'Username can only contain letters, numbers, underscores, and periods'
+      'Username can only contain letters, numbers, underscores, and periods.'
     ),
   email: z
     .string()
-    .email('Please enter a valid email address'),
+    .email('Please enter a valid email address.'),
   password: z
     .string()
     .min(8, 'Password must be at least eight (8) characters.')
@@ -19,3 +19,14 @@ export const signUpSchema = z.object({
 });
 
 export type SignUpFormData = z.infer<typeof signUpSchema>;
+
+export const signInSchema = z.object({
+  email: z
+    .string()
+    .email('Please enter a valid email address.'),
+  password: z
+    .string()
+    .min(1, 'Password is required.')
+});
+
+export type SignInFormData = z.infer<typeof signInSchema>;
