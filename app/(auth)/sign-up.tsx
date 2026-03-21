@@ -25,31 +25,19 @@ export default function SignUp() {
   const onSubmit = async (data: SignUpFormData) => {
     setServerError('');
 
-    const { data: authData, error: authError } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email: data.email,
       password: data.password,
+      options: {
+        data: { username: data.username },
+      },
     });
 
-    if (authError) {
-      setServerError(authError.message);
+    if (error) {
+      setServerError(error.message);
       return;
     }
-
-    const userId = authData.user?.id;
-    if (!userId) {
-      setServerError('Something went wrong. Please try again.');
-      return;
-    }
-
-    const { error: profileError } = await supabase
-      .from('profiles')
-      .insert({ id: userId, username: data.username });
-
-    if (profileError) {
-      setServerError(profileError.message);
-      return;
-    }
-
+    
     router.replace('/(auth)/verify-email');
   };
 
@@ -76,6 +64,7 @@ export default function SignUp() {
               onBlur={onBlur}
               value={value}
               error={errors.username?.message}
+              note='Username must...'
             />
           )}
         />
@@ -112,6 +101,7 @@ export default function SignUp() {
               onBlur={onBlur}
               value={value}
               error={errors.password?.message}
+              note='Password must...'
             />
           )}
         />

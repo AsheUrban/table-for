@@ -16,9 +16,25 @@ import { KeyboardProvider } from 'react-native-keyboard-controller';
 SplashScreen.preventAutoHideAsync();
 
 function AuthGate() {
-  const { session, loading } = useAuth();
+  const { session, profile, loading } = useAuth();
 
   if (loading) return null;
+
+  const getRedirect = () => {
+    if (!session) {
+      return '/(auth)/sign-in';
+    }
+
+    if (!session.user.email_confirmed_at) {
+      return '/(auth)/verify-email';
+    }
+
+    if (!profile?.has_onboarded) {
+      return '/(auth)/onboarding';
+    }
+
+    return ('/(tabs)');
+  }
 
   return (
     <>
@@ -26,7 +42,7 @@ function AuthGate() {
         <Stack.Screen name='(auth)' options={{ headerShown: false }} />
         <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
       </Stack>
-      {session ? <Redirect href='/(tabs)' /> : <Redirect href='/(auth)/sign-in' />}
+      <Redirect href={getRedirect()} />
       <StatusBar style='auto' />
     </>
   );
