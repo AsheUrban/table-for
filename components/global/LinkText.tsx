@@ -7,7 +7,7 @@ type LinkTextProps = PressableProps & {
 
 export default function LinkText({ title, ...rest }: LinkTextProps) {
   return (
-    <Pressable {...rest} className='group/link'>
+    <Pressable {...rest} className={`group/link ${rest.className || ''}`}>
       <Text className='text-xs underline text-black group-active/link:opacity-60'>
         {title}
       </Text>

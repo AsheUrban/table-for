@@ -13,6 +13,9 @@ import Input from '@/components/form/Input';
 import Button from '@/components/global/Button';
 import Divider from '@/components/global/Divider';
 import LinkText from '@/components/global/LinkText';
+import { makeRedirectUri } from 'expo-auth-session';
+
+const redirectTo = makeRedirectUri();
 
 export default function SignUp() {
   const [serverError, setServerError] = useState('');
@@ -30,6 +33,7 @@ export default function SignUp() {
       password: data.password,
       options: {
         data: { username: data.username },
+        emailRedirectTo: redirectTo,
       },
     });
 
@@ -96,7 +100,7 @@ export default function SignUp() {
               autoCapitalize='none'
               secureToggle
               autoCorrect={false}
-              keyboardType='email-address'
+              keyboardType='default'
               onChangeText={onChange}
               onBlur={onBlur}
               value={value}

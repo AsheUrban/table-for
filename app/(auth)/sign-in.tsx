@@ -74,7 +74,7 @@ export default function SignIn() {
               autoCapitalize='none'
               secureToggle
               autoCorrect={false}
-              keyboardType='email-address'
+              keyboardType='default'
               onChangeText={onChange}
               onBlur={onBlur}
               value={value}

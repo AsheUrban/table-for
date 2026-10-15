@@ -28,7 +28,7 @@ This project is a ground-up TypeScript rewrite of [Dine-Together](https://github
 
 ---
 
-**Current Status:** Active development.
+**Current Status:** Paused, Will Resume ASAP. Please inquire with any questions.
 
 ---
 
@@ -44,9 +44,9 @@ This project is a ground-up TypeScript rewrite of [Dine-Together](https://github
 
 | Document | Description |
 |----------|-------------|
-| [VALUES.md](./DOCUMENTATION_/VALUES.md) | Project values and guiding principles |
-| [PRIVACY_POLICY.md](./DOCUMENTATION_/PRIVACY_POLICY.md) | Privacy policy — pending rewrite for Supabase stack |
-| [LICENSE.md](./DOCUMENTATION_/LICENSE.md) | Source-available license — viewable for learning and review, not licensed for use or redistribution |
+| [VALUES.md](./VALUES.md) | Project values and guiding principles |
+| [PRIVACY_POLICY.md](./PRIVACY_POLICY.md) | Privacy policy — pending rewrite for Supabase stack |
+| [LICENSE.md](./LICENSE.md) | Source-available license — viewable for learning and review, not licensed for use or redistribution |
 
 ---
 
@@ -55,7 +55,7 @@ This project is a ground-up TypeScript rewrite of [Dine-Together](https://github
 | Core | Frontend | APIs / BaaS | Architecture |
 |------|----------|-------------|--------------|
 | TypeScript 5.9 | React Native 0.81.5 | Supabase (Auth, Database, Storage) | File-based routing (Expo Router) |
-| React 19.1 | NativeWind v4 + Tailwind CSS v3 | Google Places API | TanStack Query |
+| React 19.1 | NativeWind v4 + Tailwind CSS v3 | Google Places API | |
 | Expo SDK 54 | React Hook Form + Zod v3 | | |
 
 ---
@@ -78,9 +78,9 @@ Table For uses **Expo Router** for file-based navigation, organized into route g
 ```
 app/
   (auth)/
-    _layout.tsx          ← Auth layout (no tabs, logo header)
-    sign-in.tsx          ← Email/password + OAuth buttons
-    sign-up.tsx          ← Email/password + OAuth buttons
+    _layout.tsx          ← Auth stack (no tabs)
+    sign-in.tsx          ← Email/password
+    sign-up.tsx          ← Email/password
     verify-email.tsx     ← "Check your email" confirmation
     forgot-password.tsx  ← Enter email for reset link
     reset-password.tsx   ← Enter new password (deep link target)
@@ -119,9 +119,7 @@ table-for/
 │   ├── global/              ← Cross-context components (Text, Button, Card, etc.)
 │   └── form/                ← Form-specific components (Form, Input, etc.)
 ├── lib/                       ← Infrastructure (Supabase client, auth, storage, schemas)
-├── hooks/                     ← Custom React hooks
 ├── assets/                    ← Fonts, images, SVG icons
-├── DOCUMENTATION_/            ← Project documentation
 ├── global.css                 ← Tailwind directives for NativeWind
 ├── tailwind.config.js         ← Tailwind config with NativeWind preset
 ├── babel.config.js            ← Babel config (NativeWind JSX transform)
@@ -133,7 +131,7 @@ table-for/
 
 ## **Privacy Policy**
 
-The current privacy policy reflects the original Firebase MVP. A full rewrite for the Supabase stack is planned. See [PRIVACY_POLICY.md](./DOCUMENTATION_/PRIVACY_POLICY.md).
+The current privacy policy reflects the original Firebase MVP. A full rewrite for the Supabase stack is planned. See [PRIVACY_POLICY.md](./PRIVACY_POLICY.md).
 
 ---
 
@@ -141,7 +139,7 @@ The current privacy policy reflects the original Firebase MVP. A full rewrite fo
 
 **Source-Available — Not Open Source**
 
-This code is publicly available for transparency, learning, and review. It is **not** licensed for use, modification, or redistribution. See [LICENSE.md](./DOCUMENTATION_/LICENSE.md) for full terms.
+This code is publicly available for transparency, learning, and review. It is **not** licensed for use, modification, or redistribution. See [LICENSE.md](./LICENSE.md) for full terms.
 
 Copyright © 2026 *Ashe Urban*
 

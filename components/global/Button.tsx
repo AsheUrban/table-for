@@ -10,11 +10,11 @@ export default function Button({ title, variant, ...rest }: ButtonProps) {
   return (
     <Pressable
       {...rest}
-      className={
+      className={`${
         variant === 'black'
           ? 'group/button border border-black py-3 items-center bg-black active:bg-white'
           : 'group/button border border-black py-3 items-center bg-white active:bg-black'
-      }
+      } ${rest.className || ''}`}
     >
       <Text className={
         variant === 'black'

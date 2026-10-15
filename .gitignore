@@ -43,20 +43,8 @@ app-example
 /ios
 /android
 
-# Session notes (local development reference)
-HISTORICAL_/
-
-# Migration planning (local development reference)
-MIGRATION_/
-
-# Daily log (local development reference)
-LOG_/
-
-# Design Prototype
-ATableFor-Prototype.jsx
-
-# Research
-RESEARCH_
+# Session Documents (local development reference)
+DOCUMENTATION_
 
 # Claude Code
 tmpclaude-*
